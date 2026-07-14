@@ -4,13 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#090a12">
-
-  <title>Conoce a Maite</title>
-
   <meta
     name="description"
-    content="Maite, 51 años, vive en Mahón. Viajera, divertida, independiente y amante del mar."
+    content="Conoce a Maite: 51 años, vive en Mahón, viajera, divertida, independiente y amante del mar."
   >
+
+  <title>Conoce a Maite</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -131,23 +130,44 @@
     .hero {
       min-height: 100vh;
       min-height: 100svh;
+
       position: relative;
+
       display: grid;
       place-items: center;
+
       overflow: hidden;
-      background: #05050a;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(5, 5, 10, 0.88),
+          rgba(5, 5, 10, 0.34)
+        ),
+        url("foto-portada.jpg") center 35% / cover no-repeat;
     }
 
     .hero-video {
       position: absolute;
       inset: 0;
+
       width: 100%;
       height: 100%;
+
       object-fit: cover;
+
+      opacity: 0;
+
+      transition: opacity 0.7s ease;
+    }
+
+    .hero-video.lista {
+      opacity: 1;
     }
 
     .hero::before {
       content: "";
+
       position: absolute;
       z-index: 1;
       inset: 0;
@@ -155,21 +175,23 @@
       background:
         linear-gradient(
           90deg,
-          rgba(5, 5, 10, 0.89) 0%,
-          rgba(5, 5, 10, 0.66) 45%,
-          rgba(5, 5, 10, 0.28) 100%
+          rgba(5, 5, 10, 0.9) 0%,
+          rgba(5, 5, 10, 0.66) 44%,
+          rgba(5, 5, 10, 0.25) 100%
         ),
         linear-gradient(
           0deg,
           rgba(5, 5, 10, 0.78),
-          transparent 50%
+          transparent 52%
         );
     }
 
     .hero-contenido {
       position: relative;
       z-index: 2;
+
       width: 100%;
+
       padding: 130px 0 75px;
     }
 
@@ -197,9 +219,13 @@
     .punto {
       width: 8px;
       height: 8px;
+
       border-radius: 50%;
+
       background: var(--rosa-fuerte);
-      box-shadow: 0 0 0 7px rgba(255, 117, 152, 0.13);
+
+      box-shadow:
+        0 0 0 7px rgba(255, 117, 152, 0.13);
     }
 
     h1,
@@ -220,7 +246,9 @@
 
     .cursiva {
       display: block;
+
       color: var(--rosa);
+
       font-style: italic;
     }
 
@@ -228,6 +256,7 @@
       max-width: 660px;
 
       color: #dedbe4;
+
       font-size: clamp(1.08rem, 2.2vw, 1.34rem);
       line-height: 1.68;
     }
@@ -236,6 +265,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 13px;
+
       margin-top: 31px;
     }
 
@@ -253,6 +283,7 @@
       font-weight: 700;
 
       cursor: pointer;
+
       transition: 0.22s ease;
     }
 
@@ -262,6 +293,7 @@
 
     .boton-principal {
       color: #111;
+
       background:
         linear-gradient(
           135deg,
@@ -269,12 +301,15 @@
           var(--dorado)
         );
 
-      box-shadow: 0 14px 35px rgba(255, 117, 152, 0.22);
+      box-shadow:
+        0 14px 35px rgba(255, 117, 152, 0.22);
     }
 
     .boton-secundario {
       border-color: var(--borde);
+
       background: rgba(255, 255, 255, 0.06);
+
       backdrop-filter: blur(10px);
     }
 
@@ -283,9 +318,11 @@
       z-index: 2;
       bottom: 22px;
       left: 50%;
+
       transform: translateX(-50%);
 
       color: rgba(255, 255, 255, 0.7);
+
       font-size: 0.76rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
@@ -306,8 +343,10 @@
 
     .mini-titulo {
       color: var(--rosa);
+
       font-size: 0.77rem;
       font-weight: 700;
+
       letter-spacing: 0.17em;
       text-transform: uppercase;
     }
@@ -323,6 +362,7 @@
 
     .texto-seccion {
       color: var(--suave);
+
       font-size: 1.06rem;
       line-height: 1.75;
     }
@@ -335,6 +375,7 @@
 
     .retrato {
       min-height: 600px;
+
       overflow: hidden;
 
       border: 1px solid var(--borde);
@@ -345,7 +386,9 @@
 
     .retrato img {
       height: 100%;
+
       object-fit: cover;
+      object-position: center 35%;
     }
 
     .historia {
@@ -377,6 +420,7 @@
 
     .historia p {
       color: var(--suave);
+
       font-size: 1.08rem;
       line-height: 1.76;
     }
@@ -385,6 +429,7 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 15px;
+
       margin-top: 25px;
     }
 
@@ -418,6 +463,7 @@
 
     .dato span {
       color: var(--suave);
+
       font-size: 0.92rem;
     }
 
@@ -438,6 +484,7 @@
 
     .panel h3 {
       margin-bottom: 23px;
+
       font-family: "Playfair Display", Georgia, serif;
       font-size: 2.1rem;
     }
@@ -449,6 +496,7 @@
     .elemento {
       display: flex;
       gap: 13px;
+
       padding: 15px 0;
 
       border-bottom:
@@ -461,6 +509,7 @@
 
     .numero {
       color: var(--rosa);
+
       font-weight: 700;
     }
 
@@ -473,12 +522,15 @@
 
     .foto {
       position: relative;
+
       overflow: hidden;
 
       border: 1px solid var(--borde);
       border-radius: 27px;
 
       background: #151624;
+
+      cursor: zoom-in;
     }
 
     .foto:first-child {
@@ -492,6 +544,7 @@
     .foto img {
       width: 100%;
       height: 100%;
+
       object-fit: cover;
 
       transition: transform 0.7s ease;
@@ -499,6 +552,10 @@
 
     .foto:hover img {
       transform: scale(1.045);
+    }
+
+    .foto:nth-child(6) img {
+      object-position: center 38%;
     }
 
     .test {
@@ -528,6 +585,7 @@
 
     .pregunta p {
       margin-bottom: 12px;
+
       font-weight: 700;
     }
 
@@ -547,6 +605,7 @@
       color: var(--texto);
 
       cursor: pointer;
+
       transition: 0.2s ease;
     }
 
@@ -563,6 +622,7 @@
     .resultado {
       display: none;
       min-height: 250px;
+
       margin-top: 30px;
       padding: 32px;
 
@@ -586,6 +646,7 @@
 
     .final {
       padding: 125px 0 135px;
+
       text-align: center;
     }
 
@@ -608,27 +669,33 @@
 
     .final h2 {
       max-width: 820px;
+
       margin: 0 auto 25px;
     }
 
     .final p {
       max-width: 690px;
+
       margin: 0 auto;
 
       color: var(--suave);
+
       font-size: 1.08rem;
       line-height: 1.75;
     }
 
     footer {
       padding: 25px 18px 42px;
+
       color: #92909c;
+
       font-size: 0.87rem;
       text-align: center;
     }
 
     .aparecer {
       opacity: 0;
+
       transform: translateY(27px);
 
       transition:
@@ -638,7 +705,59 @@
 
     .aparecer.visible {
       opacity: 1;
+
       transform: none;
+    }
+
+    .lightbox {
+      position: fixed;
+      z-index: 1000;
+      inset: 0;
+
+      display: none;
+      place-items: center;
+
+      padding: 24px;
+
+      background: rgba(0, 0, 0, 0.9);
+
+      backdrop-filter: blur(8px);
+    }
+
+    .lightbox.abierto {
+      display: grid;
+    }
+
+    .lightbox img {
+      max-width: min(1100px, 92vw);
+      max-height: 88vh;
+
+      width: auto;
+      height: auto;
+
+      border-radius: 20px;
+
+      box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.55);
+    }
+
+    .cerrar {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+
+      width: 44px;
+      height: 44px;
+
+      border: 0;
+      border-radius: 50%;
+
+      background: #fff;
+      color: #111;
+
+      font-size: 1.5rem;
+
+      cursor: pointer;
     }
 
     @media (max-width: 920px) {
@@ -729,19 +848,38 @@
 <body>
 
   <nav class="navegacion">
-    <div class="marca">MAITE®</div>
+
+    <div class="marca">
+      MAITE®
+    </div>
 
     <div class="menu">
-      <a href="#maite">Conócela</a>
-      <a href="#galeria">Su mundo</a>
-      <a href="#compatibilidad">Compatibilidad</a>
-      <a class="menu-boton" href="#contacto">Dar el paso</a>
+      <a href="#maite">
+        Conócela
+      </a>
+
+      <a href="#galeria">
+        Su mundo
+      </a>
+
+      <a href="#compatibilidad">
+        Compatibilidad
+      </a>
+
+      <a
+        class="menu-boton"
+        href="#contacto"
+      >
+        Dar el paso
+      </a>
     </div>
+
   </nav>
 
   <header class="hero">
 
     <video
+      id="videoMaite"
       class="hero-video"
       autoplay
       muted
@@ -750,7 +888,10 @@
       preload="metadata"
       poster="foto-portada.jpg"
     >
-      <source src="video-maite.mp4" type="video/mp4">
+      <source
+        src="video-maite.mp4?v=3"
+        type="video/mp4"
+      >
     </video>
 
     <div class="hero-contenido">
@@ -766,24 +907,35 @@
 
           <h1>
             Esta es
-            <span class="cursiva">Maite.</span>
+            <span class="cursiva">
+              Maite.
+            </span>
           </h1>
 
           <p class="hero-frase">
             Hay personas que aparecen por casualidad.
             Y otras que merecen ser presentadas.
-            Maite tiene 51 años, vive en Mahón y todavía conserva
-            la curiosidad de quien sabe que queda mucho mundo por descubrir.
+            Maite tiene 51 años, vive en Mahón y conserva
+            la curiosidad de quien sabe que todavía queda
+            mucho mundo por descubrir.
           </p>
 
           <div class="botones">
-            <a class="boton boton-principal" href="#maite">
+
+            <a
+              class="boton boton-principal"
+              href="#maite"
+            >
               Conocer a Maite ↓
             </a>
 
-            <a class="boton boton-secundario" href="#compatibilidad">
+            <a
+              class="boton boton-secundario"
+              href="#compatibilidad"
+            >
               Hacer el test
             </a>
+
           </div>
 
         </div>
@@ -820,9 +972,9 @@
 
           <p class="texto-seccion">
             Maite no busca que alguien le cambie la vida.
-            Le basta con encontrar a una persona con quien disfrutarla:
-            viajar, reírse, conversar, improvisar un plan y terminar
-            viendo ponerse el sol junto al mar.
+            Le basta con encontrar a una persona con quien
+            disfrutarla: viajar, reírse, conversar, improvisar
+            un plan y terminar viendo ponerse el sol junto al mar.
           </p>
 
         </div>
@@ -830,10 +982,12 @@
         <div class="presentacion">
 
           <div class="retrato aparecer">
+
             <img
               src="foto-portada.jpg"
               alt="Maite disfrutando de un día en el mar"
             >
+
           </div>
 
           <div class="historia aparecer">
@@ -844,20 +998,22 @@
 
             <p>
               La edad suficiente para saber lo que quiere
-              y la curiosidad suficiente para seguir descubriendo el mundo.
+              y la curiosidad suficiente para seguir
+              descubriendo el mundo.
             </p>
 
             <p>
               Vive en Mahón, en Menorca. Le encanta viajar,
-              el mar, leer, conocer lugares nuevos y disfrutar de las
-              pequeñas cosas: una buena conversación, una copa en una terraza,
-              una excursión inesperada o un día de barco.
+              el mar, leer, conocer lugares nuevos y disfrutar
+              de las pequeñas cosas: una buena conversación,
+              una copa en una terraza, una excursión inesperada
+              o un día de barco.
             </p>
 
             <p>
-              Es independiente, divertida, auténtica y de esas personas
-              con las que un café puede acabar convirtiéndose
-              en una conversación de tres horas.
+              Es independiente, divertida, auténtica y de esas
+              personas con las que un café puede acabar
+              convirtiéndose en una conversación de tres horas.
             </p>
 
           </div>
@@ -868,48 +1024,80 @@
 
           <article class="dato aparecer">
 
-            <div class="icono">📍</div>
+            <div class="icono">
+              📍
+            </div>
 
             <div>
-              <strong>Mahón</strong>
+              <strong>
+                Mahón
+              </strong>
+
               <br>
-              <span>Su hogar está en Menorca</span>
+
+              <span>
+                Su hogar está en Menorca
+              </span>
             </div>
 
           </article>
 
           <article class="dato aparecer">
 
-            <div class="icono">✈️</div>
+            <div class="icono">
+              ✈️
+            </div>
 
             <div>
-              <strong>Viajera</strong>
+              <strong>
+                Viajera
+              </strong>
+
               <br>
-              <span>Siempre tiene un próximo destino en mente</span>
+
+              <span>
+                Siempre tiene un próximo destino en mente
+              </span>
             </div>
 
           </article>
 
           <article class="dato aparecer">
 
-            <div class="icono">🌊</div>
+            <div class="icono">
+              🌊
+            </div>
 
             <div>
-              <strong>Amante del mar</strong>
+              <strong>
+                Amante del mar
+              </strong>
+
               <br>
-              <span>Barco, playa, natación y puestas de sol</span>
+
+              <span>
+                Barco, playa, natación y puestas de sol
+              </span>
             </div>
 
           </article>
 
           <article class="dato aparecer">
 
-            <div class="icono">📖</div>
+            <div class="icono">
+              📖
+            </div>
 
             <div>
-              <strong>Curiosa</strong>
+              <strong>
+                Curiosa
+              </strong>
+
               <br>
-              <span>Lee, conversa y siempre quiere descubrir algo nuevo</span>
+
+              <span>
+                Lee, conversa y siempre quiere descubrir algo nuevo
+              </span>
             </div>
 
           </article>
@@ -926,7 +1114,9 @@
 
         <article class="panel aparecer">
 
-          <h3>Green flags</h3>
+          <h3>
+            Green flags
+          </h3>
 
           <div class="lista">
 
@@ -966,7 +1156,9 @@
 
         <article class="panel aparecer">
 
-          <h3>Lo que busca</h3>
+          <h3>
+            Lo que busca
+          </h3>
 
           <div class="lista">
 
@@ -1028,7 +1220,8 @@
 
           <p class="texto-seccion">
             No hace falta decir que le gusta viajar,
-            improvisar o disfrutar del mar. Sus fotos ya lo cuentan.
+            improvisar o disfrutar del mar.
+            Sus fotos ya lo cuentan.
           </p>
 
         </div>
@@ -1036,35 +1229,59 @@
         <div class="galeria">
 
           <div class="foto aparecer">
-            <img src="foto1.jpg" alt="Maite disfrutando de una terraza">
+            <img
+              src="foto1.jpg"
+              alt="Maite disfrutando de una terraza"
+            >
           </div>
 
           <div class="foto aparecer">
-            <img src="foto2.jpg" alt="Maite al atardecer en la playa">
+            <img
+              src="foto2.jpg"
+              alt="Maite al atardecer en la playa"
+            >
           </div>
 
           <div class="foto aparecer">
-            <img src="foto8.jpg" alt="Maite visitando una cueva">
+            <img
+              src="foto3.jpg"
+              alt="Maite visitando una cueva"
+            >
           </div>
 
           <div class="foto aparecer">
-            <img src="foto4.jpg" alt="Maite junto a una cascada">
+            <img
+              src="foto4.jpg"
+              alt="Maite junto a una cascada"
+            >
           </div>
 
           <div class="foto aparecer">
-            <img src="foto5.jpg" alt="Maite conversando en un evento">
+            <img
+              src="foto5.jpg"
+              alt="Maite conversando en un evento"
+            >
           </div>
 
           <div class="foto aparecer">
-            <img src="foto6.jpg?v=2" alt="Maite en una terraza al atardecer">
+            <img
+              src="foto6.jpg?v=4"
+              alt="Maite en una terraza al atardecer"
+            >
           </div>
 
           <div class="foto aparecer">
-            <img src="foto7.jpg" alt="Maite leyendo en un barco">
+            <img
+              src="foto7.jpg"
+              alt="Maite leyendo en un barco"
+            >
           </div>
 
           <div class="foto aparecer">
-            <img src="foto8.jpg" alt="Maite nadando en el mar">
+            <img
+              src="foto8.jpg"
+              alt="Maite nadando en el mar"
+            >
           </div>
 
         </div>
@@ -1092,16 +1309,19 @@
               </h2>
 
               <p class="texto-seccion">
-                Este algoritmo ha sido desarrollado
-                por amigas, copas de vino y años de experiencia
-                detectando red flags.
+                Este algoritmo ha sido desarrollado por amigas,
+                copas de vino y años de experiencia detectando
+                red flags.
               </p>
 
             </div>
 
             <div>
 
-              <div class="pregunta" data-pregunta>
+              <div
+                class="pregunta"
+                data-pregunta
+              >
 
                 <p>
                   1. Tu idea de una primera cita es…
@@ -1109,15 +1329,24 @@
 
                 <div class="opciones">
 
-                  <button class="opcion" data-puntos="3">
+                  <button
+                    class="opcion"
+                    data-puntos="3"
+                  >
                     Un sitio bonito y una buena conversación
                   </button>
 
-                  <button class="opcion" data-puntos="2">
+                  <button
+                    class="opcion"
+                    data-puntos="2"
+                  >
                     Un plan espontáneo
                   </button>
 
-                  <button class="opcion" data-puntos="0">
+                  <button
+                    class="opcion"
+                    data-puntos="0"
+                  >
                     “Ya veremos” a las 23:47
                   </button>
 
@@ -1125,7 +1354,10 @@
 
               </div>
 
-              <div class="pregunta" data-pregunta>
+              <div
+                class="pregunta"
+                data-pregunta
+              >
 
                 <p>
                   2. ¿Qué relación tienes con el ghosting?
@@ -1133,15 +1365,24 @@
 
                 <div class="opciones">
 
-                  <button class="opcion" data-puntos="3">
+                  <button
+                    class="opcion"
+                    data-puntos="3"
+                  >
                     Me parece de cobardes
                   </button>
 
-                  <button class="opcion" data-puntos="1">
+                  <button
+                    class="opcion"
+                    data-puntos="1"
+                  >
                     Alguna vez he pecado
                   </button>
 
-                  <button class="opcion" data-puntos="0">
+                  <button
+                    class="opcion"
+                    data-puntos="0"
+                  >
                     Estoy leyendo esto y no respondiendo a tres personas
                   </button>
 
@@ -1149,7 +1390,10 @@
 
               </div>
 
-              <div class="pregunta" data-pregunta>
+              <div
+                class="pregunta"
+                data-pregunta
+              >
 
                 <p>
                   3. ¿Qué buscas ahora mismo?
@@ -1157,15 +1401,24 @@
 
                 <div class="opciones">
 
-                  <button class="opcion" data-puntos="3">
+                  <button
+                    class="opcion"
+                    data-puntos="3"
+                  >
                     Conocer a alguien de verdad
                   </button>
 
-                  <button class="opcion" data-puntos="2">
+                  <button
+                    class="opcion"
+                    data-puntos="2"
+                  >
                     Ver qué surge, pero con honestidad
                   </button>
 
-                  <button class="opcion" data-puntos="0">
+                  <button
+                    class="opcion"
+                    data-puntos="0"
+                  >
                     No lo sé, pero exijo atención diaria
                   </button>
 
@@ -1184,7 +1437,10 @@
 
           </div>
 
-          <div class="resultado" id="resultado">
+          <div
+            class="resultado"
+            id="resultado"
+          >
 
             <div>
 
@@ -1211,7 +1467,10 @@
 
     </section>
 
-    <section class="final" id="contacto">
+    <section
+      class="final"
+      id="contacto"
+    >
 
       <div class="contenedor">
 
@@ -1234,10 +1493,9 @@
 
           <div
             class="botones"
-            style="justify-content:center;"
+            style="justify-content: center;"
           >
 
-            <!-- CAMBIA USUARIO_DE_MAITE POR SU USUARIO REAL -->
             <a
               class="boton boton-principal"
               href="https://instagram.com/maitechumf"
@@ -1258,60 +1516,92 @@
   </main>
 
   <footer>
-    Hecho con cariño por unas amigas que creen que Maite merece una historia bonita ❤️
+    Hecho con cariño por unas amigas que creen
+    que Maite merece una historia bonita ❤️
   </footer>
 
+  <div
+    class="lightbox"
+    id="lightbox"
+  >
+
+    <button
+      class="cerrar"
+      id="cerrarLightbox"
+      aria-label="Cerrar"
+    >
+      ×
+    </button>
+
+    <img
+      id="imagenGrande"
+      src=""
+      alt=""
+    >
+
+  </div>
+
   <script>
+    const observador =
+      new IntersectionObserver(
+        function (elementos) {
 
-    const observador = new IntersectionObserver(
-      function (elementos) {
+          elementos.forEach(
+            function (elemento) {
 
-        elementos.forEach(function (elemento) {
-
-          if (elemento.isIntersecting) {
-            elemento.target.classList.add("visible");
-          }
-
-        });
-
-      },
-      {
-        threshold: 0.12
-      }
-    );
-
-    document
-      .querySelectorAll(".aparecer")
-      .forEach(function (elemento) {
-        observador.observe(elemento);
-      });
-
-
-    document
-      .querySelectorAll("[data-pregunta]")
-      .forEach(function (pregunta) {
-
-        const opciones =
-          pregunta.querySelectorAll(".opcion");
-
-        opciones.forEach(function (opcion) {
-
-          opcion.addEventListener(
-            "click",
-            function () {
-
-              opciones.forEach(function (otraOpcion) {
-                otraOpcion.classList.remove("seleccionada");
-              });
-
-              opcion.classList.add("seleccionada");
+              if (elemento.isIntersecting) {
+                elemento.target.classList.add("visible");
+              }
 
             }
           );
 
-        });
+        },
+        {
+          threshold: 0.12
+        }
+      );
 
-      });
+    document
+      .querySelectorAll(".aparecer")
+      .forEach(
+        function (elemento) {
+          observador.observe(elemento);
+        }
+      );
+
+
+    document
+      .querySelectorAll("[data-pregunta]")
+      .forEach(
+        function (pregunta) {
+
+          const opciones =
+            pregunta.querySelectorAll(".opcion");
+
+          opciones.forEach(
+            function (opcion) {
+
+              opcion.addEventListener(
+                "click",
+                function () {
+
+                  opciones.forEach(
+                    function (otraOpcion) {
+                      otraOpcion.classList.remove("seleccionada");
+                    }
+                  );
+
+                  opcion.classList.add("seleccionada");
+
+                }
+              );
+
+            }
+          );
+
+        }
+      );
 
 
     document
@@ -1326,18 +1616,22 @@
             );
 
           const seleccionadas =
-            preguntas.map(function (pregunta) {
+            preguntas.map(
+              function (pregunta) {
 
-              return pregunta.querySelector(
-                ".opcion.seleccionada"
-              );
+                return pregunta.querySelector(
+                  ".opcion.seleccionada"
+                );
 
-            });
+              }
+            );
 
           const faltaRespuesta =
-            seleccionadas.some(function (opcion) {
-              return !opcion;
-            });
+            seleccionadas.some(
+              function (opcion) {
+                return !opcion;
+              }
+            );
 
           if (faltaRespuesta) {
 
@@ -1363,9 +1657,6 @@
             Math.round(
               (puntos / 9) * 100
             );
-
-          const caja =
-            document.getElementById("resultado");
 
           document
             .getElementById("porcentaje")
@@ -1404,6 +1695,9 @@
 
           }
 
+          const caja =
+            document.getElementById("resultado");
+
           caja.style.display = "grid";
 
           caja.scrollIntoView({
@@ -1414,6 +1708,122 @@
         }
       );
 
+
+    const video =
+      document.getElementById("videoMaite");
+
+    function activarVideoSiFunciona() {
+
+      if (
+        video.readyState >= 2 &&
+        Number.isFinite(video.duration) &&
+        video.duration > 0
+      ) {
+
+        video.classList.add("lista");
+
+        video
+          .play()
+          .catch(
+            function () {}
+          );
+
+      }
+
+    }
+
+    video.addEventListener(
+      "loadedmetadata",
+      activarVideoSiFunciona
+    );
+
+    video.addEventListener(
+      "canplay",
+      activarVideoSiFunciona
+    );
+
+    video.addEventListener(
+      "error",
+      function () {
+        video.remove();
+      }
+    );
+
+    setTimeout(
+      function () {
+
+        if (!video.classList.contains("lista")) {
+          video.remove();
+        }
+
+      },
+      4500
+    );
+
+
+    const lightbox =
+      document.getElementById("lightbox");
+
+    const imagenGrande =
+      document.getElementById("imagenGrande");
+
+    const cerrarLightbox =
+      document.getElementById("cerrarLightbox");
+
+    document
+      .querySelectorAll(".foto img")
+      .forEach(
+        function (imagen) {
+
+          imagen.addEventListener(
+            "click",
+            function () {
+
+              imagenGrande.src = imagen.src;
+              imagenGrande.alt = imagen.alt;
+
+              lightbox.classList.add("abierto");
+
+            }
+          );
+
+        }
+      );
+
+    function cerrarGaleria() {
+
+      lightbox.classList.remove("abierto");
+
+      imagenGrande.src = "";
+
+    }
+
+    cerrarLightbox.addEventListener(
+      "click",
+      cerrarGaleria
+    );
+
+    lightbox.addEventListener(
+      "click",
+      function (evento) {
+
+        if (evento.target === lightbox) {
+          cerrarGaleria();
+        }
+
+      }
+    );
+
+    document.addEventListener(
+      "keydown",
+      function (evento) {
+
+        if (evento.key === "Escape") {
+          cerrarGaleria();
+        }
+
+      }
+    );
   </script>
 
 </body>
