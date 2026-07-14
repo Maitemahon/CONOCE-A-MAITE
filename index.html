@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090a12">
 
   <title>Conoce a Maite</title>
 
   <meta
     name="description"
-    content="Conoce a Maite. Una casualidad demasiado buena para dejarla pasar."
+    content="Maite, 51 años, vive en Mahón. Viajera, divertida, independiente y amante del mar."
   >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,16 +22,15 @@
 
   <style>
     :root {
-      --fondo: #0b0c16;
-      --fondo-claro: #15172a;
-      --texto: #f8f6f3;
-      --texto-suave: #bbb9c6;
-      --rosa: #ff799d;
-      --rosa-claro: #ffc0d1;
-      --dorado: #f1d4a4;
+      --fondo: #090a12;
+      --texto: #faf7f2;
+      --suave: #b9b7c2;
+      --rosa: #f5a8bd;
+      --rosa-fuerte: #ff7598;
+      --dorado: #f0d2a0;
       --borde: rgba(255, 255, 255, 0.14);
-      --tarjeta: rgba(255, 255, 255, 0.06);
-      --sombra: 0 25px 80px rgba(0, 0, 0, 0.38);
+      --tarjeta: rgba(255, 255, 255, 0.055);
+      --sombra: 0 25px 90px rgba(0, 0, 0, 0.42);
     }
 
     * {
@@ -43,34 +43,27 @@
 
     body {
       margin: 0;
+      overflow-x: hidden;
       font-family: "DM Sans", Arial, sans-serif;
       color: var(--texto);
       background:
         radial-gradient(
-          circle at 10% 10%,
-          rgba(255, 121, 157, 0.18),
+          circle at 10% 5%,
+          rgba(255, 117, 152, 0.17),
           transparent 28%
         ),
         radial-gradient(
-          circle at 90% 20%,
-          rgba(110, 92, 255, 0.18),
-          transparent 30%
+          circle at 92% 18%,
+          rgba(103, 89, 245, 0.14),
+          transparent 25%
         ),
         var(--fondo);
-
-      overflow-x: hidden;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.12;
-      z-index: 1000;
-
-      background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E");
+    img,
+    video {
+      display: block;
+      width: 100%;
     }
 
     a {
@@ -78,36 +71,36 @@
     }
 
     button {
-      font-family: inherit;
+      font: inherit;
     }
 
     .contenedor {
-      width: min(1120px, calc(100% - 36px));
+      width: min(1120px, calc(100% - 34px));
       margin: 0 auto;
     }
 
     .navegacion {
       position: fixed;
       z-index: 100;
-      top: 14px;
+      top: 13px;
       left: 50%;
       transform: translateX(-50%);
 
-      width: min(1060px, calc(100% - 28px));
+      width: min(1040px, calc(100% - 26px));
 
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      padding: 12px 16px 12px 20px;
+      padding: 11px 14px 11px 19px;
 
       border: 1px solid var(--borde);
       border-radius: 999px;
 
-      background: rgba(11, 12, 22, 0.75);
+      background: rgba(9, 10, 18, 0.73);
       backdrop-filter: blur(18px);
 
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.22);
+      box-shadow: 0 12px 38px rgba(0, 0, 0, 0.25);
     }
 
     .marca {
@@ -118,42 +111,70 @@
     .menu {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 21px;
     }
 
     .menu a {
       text-decoration: none;
+      color: var(--suave);
       font-size: 0.92rem;
-      color: var(--texto-suave);
     }
 
-    .menu .boton-menu {
-      padding: 10px 16px;
+    .menu .menu-boton {
+      padding: 10px 15px;
       border-radius: 999px;
-
       background: var(--texto);
       color: #111;
-
       font-weight: 700;
     }
 
     .hero {
       min-height: 100vh;
       min-height: 100svh;
-
+      position: relative;
       display: grid;
       place-items: center;
-
-      padding: 110px 0 70px;
-
-      position: relative;
+      overflow: hidden;
+      background: #05050a;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 65px;
-      align-items: center;
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(5, 5, 10, 0.89) 0%,
+          rgba(5, 5, 10, 0.66) 45%,
+          rgba(5, 5, 10, 0.28) 100%
+        ),
+        linear-gradient(
+          0deg,
+          rgba(5, 5, 10, 0.78),
+          transparent 50%
+        );
+    }
+
+    .hero-contenido {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 130px 0 75px;
+    }
+
+    .hero-texto {
+      max-width: 770px;
     }
 
     .etiqueta {
@@ -166,22 +187,19 @@
       border: 1px solid var(--borde);
       border-radius: 999px;
 
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--texto-suave);
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(10px);
 
+      color: #dedbe4;
       font-size: 0.88rem;
     }
 
     .punto {
       width: 8px;
       height: 8px;
-
       border-radius: 50%;
-
-      background: var(--rosa);
-
-      box-shadow:
-        0 0 0 7px rgba(255, 121, 157, 0.13);
+      background: var(--rosa-fuerte);
+      box-shadow: 0 0 0 7px rgba(255, 117, 152, 0.13);
     }
 
     h1,
@@ -192,34 +210,33 @@
     }
 
     h1 {
-      margin: 24px 0;
+      margin: 23px 0 25px;
 
       font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(3.5rem, 8vw, 7rem);
-      line-height: 0.92;
-      letter-spacing: -0.055em;
+      font-size: clamp(4rem, 9vw, 8.2rem);
+      line-height: 0.89;
+      letter-spacing: -0.06em;
     }
 
     .cursiva {
-      color: var(--rosa-claro);
+      display: block;
+      color: var(--rosa);
       font-style: italic;
     }
 
-    .texto-principal {
-      max-width: 640px;
+    .hero-frase {
+      max-width: 660px;
 
-      color: var(--texto-suave);
-
-      font-size: clamp(1.08rem, 2vw, 1.27rem);
+      color: #dedbe4;
+      font-size: clamp(1.08rem, 2.2vw, 1.34rem);
       line-height: 1.68;
     }
 
     .botones {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-
-      margin-top: 32px;
+      gap: 13px;
+      margin-top: 31px;
     }
 
     .boton {
@@ -229,17 +246,14 @@
 
       padding: 15px 23px;
 
-      border-radius: 999px;
       border: 1px solid transparent;
+      border-radius: 999px;
 
       text-decoration: none;
       font-weight: 700;
 
       cursor: pointer;
-
-      transition:
-        transform 0.2s ease,
-        opacity 0.2s ease;
+      transition: 0.22s ease;
     }
 
     .boton:hover {
@@ -248,111 +262,32 @@
 
     .boton-principal {
       color: #111;
-
       background:
         linear-gradient(
           135deg,
-          var(--rosa-claro),
+          var(--rosa),
           var(--dorado)
         );
 
-      box-shadow:
-        0 14px 36px rgba(255, 121, 157, 0.22);
+      box-shadow: 0 14px 35px rgba(255, 117, 152, 0.22);
     }
 
     .boton-secundario {
-      background: rgba(255, 255, 255, 0.04);
       border-color: var(--borde);
-    }
-
-    .contenedor-foto {
-      position: relative;
-      max-width: 470px;
-      margin: 0 auto;
-    }
-
-    .foto-principal {
-      aspect-ratio: 4 / 5;
-
-      overflow: hidden;
-
-      border-radius: 44px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-
-      background:
-        linear-gradient(
-          to bottom,
-          transparent,
-          rgba(0, 0, 0, 0.24)
-        ),
-        url("foto-portada.jpg") center / cover;
-
-      box-shadow: var(--sombra);
-
-      position: relative;
-    }
-
-    .foto-principal::after {
-      content: "Aquí aparecerá foto-portada.jpg";
-
-      position: absolute;
-      left: 18px;
-      right: 18px;
-      bottom: 18px;
-
-      padding: 12px 15px;
-
-      border-radius: 16px;
-
-      background: rgba(0, 0, 0, 0.48);
+      background: rgba(255, 255, 255, 0.06);
       backdrop-filter: blur(10px);
-
-      text-align: center;
-      font-size: 0.84rem;
-    }
-
-    .tarjeta-flotante {
-      position: absolute;
-      right: -28px;
-      bottom: 48px;
-
-      width: 194px;
-
-      padding: 18px;
-
-      border-radius: 22px;
-
-      background: rgba(255, 255, 255, 0.93);
-      color: #151515;
-
-      box-shadow:
-        0 16px 45px rgba(0, 0, 0, 0.3);
-
-      transform: rotate(-3deg);
-    }
-
-    .tarjeta-flotante strong {
-      display: block;
-      margin-bottom: 5px;
-      font-size: 1.15rem;
-    }
-
-    .tarjeta-flotante span {
-      font-size: 0.88rem;
-      color: #555;
     }
 
     .desliza {
       position: absolute;
-      bottom: 20px;
+      z-index: 2;
+      bottom: 22px;
       left: 50%;
-
       transform: translateX(-50%);
 
-      color: var(--texto-suave);
-
-      font-size: 0.78rem;
-      letter-spacing: 0.14em;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.76rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
@@ -360,55 +295,107 @@
       padding: 110px 0;
     }
 
-    .cabecera-seccion {
+    .cabecera {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
+      grid-template-columns: 0.92fr 1.08fr;
       gap: 50px;
       align-items: end;
 
-      margin-bottom: 50px;
+      margin-bottom: 52px;
     }
 
-    .subtitulo {
-      color: var(--rosa-claro);
-
-      font-size: 0.78rem;
+    .mini-titulo {
+      color: var(--rosa);
+      font-size: 0.77rem;
       font-weight: 700;
-
-      letter-spacing: 0.16em;
+      letter-spacing: 0.17em;
       text-transform: uppercase;
     }
 
     h2 {
-      margin: 12px 0 0;
+      margin: 13px 0 0;
 
       font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(2.6rem, 5vw, 4.8rem);
-      line-height: 1;
-      letter-spacing: -0.04em;
+      font-size: clamp(2.7rem, 5vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: -0.045em;
     }
 
     .texto-seccion {
-      color: var(--texto-suave);
-
+      color: var(--suave);
       font-size: 1.06rem;
-      line-height: 1.72;
+      line-height: 1.75;
+    }
+
+    .presentacion {
+      display: grid;
+      grid-template-columns: 0.86fr 1.14fr;
+      gap: 25px;
+    }
+
+    .retrato {
+      min-height: 600px;
+      overflow: hidden;
+
+      border: 1px solid var(--borde);
+      border-radius: 36px;
+
+      box-shadow: var(--sombra);
+    }
+
+    .retrato img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .historia {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      padding: 42px;
+
+      border: 1px solid var(--borde);
+      border-radius: 36px;
+
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(255, 117, 152, 0.16),
+          transparent 36%
+        ),
+        var(--tarjeta);
+    }
+
+    .edad {
+      margin-bottom: 20px;
+
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2.3rem, 5vw, 4.3rem);
+      line-height: 1;
+    }
+
+    .historia p {
+      color: var(--suave);
+      font-size: 1.08rem;
+      line-height: 1.76;
     }
 
     .datos {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
+      gap: 15px;
+      margin-top: 25px;
     }
 
     .dato {
-      min-height: 195px;
+      min-height: 190px;
 
       display: flex;
       flex-direction: column;
       justify-content: space-between;
 
-      padding: 25px;
+      padding: 24px;
 
       border: 1px solid var(--borde);
       border-radius: 28px;
@@ -417,7 +404,7 @@
         linear-gradient(
           180deg,
           rgba(255, 255, 255, 0.09),
-          rgba(255, 255, 255, 0.04)
+          rgba(255, 255, 255, 0.035)
         );
     }
 
@@ -426,12 +413,12 @@
     }
 
     .dato strong {
-      font-size: 1.18rem;
+      font-size: 1.16rem;
     }
 
     .dato span {
-      color: var(--texto-suave);
-      font-size: 0.93rem;
+      color: var(--suave);
+      font-size: 0.92rem;
     }
 
     .dos-columnas {
@@ -441,93 +428,77 @@
     }
 
     .panel {
-      padding: 35px;
+      padding: 36px;
 
       border: 1px solid var(--borde);
-      border-radius: 30px;
+      border-radius: 31px;
 
       background: var(--tarjeta);
     }
 
     .panel h3 {
-      margin-bottom: 22px;
-
+      margin-bottom: 23px;
       font-family: "Playfair Display", Georgia, serif;
       font-size: 2.1rem;
     }
 
     .lista {
       display: grid;
-      gap: 4px;
     }
 
-    .elemento-lista {
+    .elemento {
       display: flex;
       gap: 13px;
-
       padding: 15px 0;
 
       border-bottom:
         1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .elemento-lista:last-child {
+    .elemento:last-child {
       border-bottom: 0;
     }
 
     .numero {
-      color: var(--rosa-claro);
+      color: var(--rosa);
       font-weight: 700;
     }
 
     .galeria {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr 0.8fr;
-      grid-template-rows: 280px 280px;
+      grid-template-columns: 1.15fr 0.85fr 0.85fr;
+      grid-template-rows: 300px 300px 300px;
       gap: 16px;
     }
 
-    .foto-galeria {
+    .foto {
       position: relative;
-
       overflow: hidden;
 
       border: 1px solid var(--borde);
       border-radius: 27px;
 
-      background:
-        linear-gradient(
-          135deg,
-          rgba(255, 121, 157, 0.16),
-          rgba(110, 92, 255, 0.14)
-        ),
-        #17192b;
+      background: #151624;
     }
 
-    .foto-galeria:first-child {
+    .foto:first-child {
       grid-row: 1 / 3;
     }
 
-    .foto-galeria img {
+    .foto:nth-child(6) {
+      grid-column: 1 / 3;
+    }
+
+    .foto img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+
+      transition: transform 0.7s ease;
     }
 
-    .nombre-foto {
-      position: absolute;
-      left: 15px;
-      right: 15px;
-      bottom: 15px;
-
-      padding: 10px;
-
-      border-radius: 13px;
-
-      background: rgba(0, 0, 0, 0.5);
-
-      text-align: center;
-      font-size: 0.82rem;
+    .foto:hover img {
+      transform: scale(1.045);
     }
 
     .test {
@@ -539,20 +510,20 @@
       background:
         radial-gradient(
           circle at top right,
-          rgba(255, 121, 157, 0.2),
+          rgba(255, 117, 152, 0.19),
           transparent 35%
         ),
-        rgba(255, 255, 255, 0.05);
+        var(--tarjeta);
     }
 
     .test-grid {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
+      grid-template-columns: 0.88fr 1.12fr;
       gap: 50px;
     }
 
     .pregunta {
-      margin-bottom: 28px;
+      margin-bottom: 27px;
     }
 
     .pregunta p {
@@ -572,11 +543,10 @@
       border: 1px solid var(--borde);
       border-radius: 999px;
 
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.045);
       color: var(--texto);
 
       cursor: pointer;
-
       transition: 0.2s ease;
     }
 
@@ -592,17 +562,15 @@
 
     .resultado {
       display: none;
-
-      margin-top: 30px;
       min-height: 250px;
+      margin-top: 30px;
+      padding: 32px;
 
       place-items: center;
 
-      padding: 32px;
+      border-radius: 29px;
 
-      border-radius: 28px;
-
-      background: #f4efe9;
+      background: #f4efe8;
       color: #171717;
 
       text-align: center;
@@ -612,62 +580,60 @@
       margin-bottom: 10px;
 
       font-family: "Playfair Display", Georgia, serif;
-      font-size: 4.7rem;
+      font-size: 4.8rem;
       line-height: 1;
     }
 
     .final {
-      padding: 120px 0 130px;
+      padding: 125px 0 135px;
       text-align: center;
     }
 
-    .tarjeta-final {
-      padding: 75px 30px;
+    .final-caja {
+      padding: 78px 30px;
 
       border: 1px solid var(--borde);
-      border-radius: 42px;
+      border-radius: 43px;
 
       background:
         radial-gradient(
           circle at 50% 0%,
-          rgba(255, 121, 157, 0.25),
-          transparent 40%
+          rgba(255, 117, 152, 0.25),
+          transparent 42%
         ),
-        rgba(255, 255, 255, 0.05);
+        var(--tarjeta);
 
       box-shadow: var(--sombra);
     }
 
     .final h2 {
-      max-width: 800px;
+      max-width: 820px;
       margin: 0 auto 25px;
     }
 
     .final p {
-      max-width: 680px;
+      max-width: 690px;
       margin: 0 auto;
 
-      color: var(--texto-suave);
-      font-size: 1.07rem;
-      line-height: 1.72;
+      color: var(--suave);
+      font-size: 1.08rem;
+      line-height: 1.75;
     }
 
     footer {
       padding: 25px 18px 42px;
-
       color: #92909c;
-
-      text-align: center;
       font-size: 0.87rem;
+      text-align: center;
     }
 
     .aparecer {
       opacity: 0;
-      transform: translateY(28px);
+      transform: translateY(27px);
 
       transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
+        opacity 0.72s ease,
+        transform 0.72s ease;
     }
 
     .aparecer.visible {
@@ -675,23 +641,15 @@
       transform: none;
     }
 
-    @media (max-width: 900px) {
-      .hero-grid,
-      .cabecera-seccion,
+    @media (max-width: 920px) {
+      .cabecera,
+      .presentacion,
       .test-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero-grid {
-        gap: 45px;
-      }
-
-      .contenedor-foto {
-        max-width: 390px;
-      }
-
-      .tarjeta-flotante {
-        right: -8px;
+      .retrato {
+        min-height: 540px;
       }
 
       .datos {
@@ -700,30 +658,44 @@
 
       .galeria {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 390px 250px 250px;
+        grid-template-rows: 440px repeat(4, 260px);
       }
 
-      .foto-galeria:first-child {
+      .foto:first-child {
         grid-column: 1 / 3;
         grid-row: auto;
+      }
+
+      .foto:nth-child(6) {
+        grid-column: auto;
       }
     }
 
     @media (max-width: 650px) {
       .navegacion {
-        top: 9px;
+        top: 8px;
       }
 
-      .menu a:not(.boton-menu) {
+      .menu a:not(.menu-boton) {
         display: none;
       }
 
       h1 {
-        font-size: 3.6rem;
+        font-size: 4rem;
+      }
+
+      .hero::before {
+        background:
+          linear-gradient(
+            0deg,
+            rgba(5, 5, 10, 0.92) 0%,
+            rgba(5, 5, 10, 0.57) 70%,
+            rgba(5, 5, 10, 0.25) 100%
+          );
       }
 
       section {
-        padding: 85px 0;
+        padding: 84px 0;
       }
 
       .datos,
@@ -731,24 +703,24 @@
         grid-template-columns: 1fr;
       }
 
-      .galeria {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(4, 360px);
-      }
-
-      .foto-galeria:first-child {
-        grid-column: auto;
-      }
-
-      .test,
-      .panel {
+      .historia,
+      .panel,
+      .test {
         padding: 27px;
       }
 
-      .tarjeta-flotante {
-        right: 10px;
-        bottom: 20px;
-        width: 175px;
+      .retrato {
+        min-height: 520px;
+      }
+
+      .galeria {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 390px);
+      }
+
+      .foto:first-child,
+      .foto:nth-child(6) {
+        grid-column: auto;
       }
     }
   </style>
@@ -760,57 +732,60 @@
     <div class="marca">MAITE®</div>
 
     <div class="menu">
-      <a href="#conocela">Conócela</a>
+      <a href="#maite">Conócela</a>
+      <a href="#galeria">Su mundo</a>
       <a href="#compatibilidad">Compatibilidad</a>
-      <a class="boton-menu" href="#contacto">Dar el paso</a>
+      <a class="menu-boton" href="#contacto">Dar el paso</a>
     </div>
   </nav>
 
   <header class="hero">
 
-    <div class="contenedor hero-grid">
+    <video
+      class="hero-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="foto-portada.jpg"
+    >
+      <source src="video-maite.mp4" type="video/mp4">
+    </video>
 
-      <div class="aparecer">
+    <div class="hero-contenido">
 
-        <div class="etiqueta">
-          <span class="punto"></span>
-          Campaña creada por amigas con criterio
-        </div>
+      <div class="contenedor">
 
-        <h1>
-          Hay personas que no se encuentran.
-          <span class="cursiva">Se descubren.</span>
-        </h1>
+        <div class="hero-texto aparecer">
 
-        <p class="texto-principal">
-          Si has escaneado este QR, quizá no sea casualidad.
-          Te presentamos a Maite: divertida, auténtica y
-          demasiado buena para dejarla en manos del algoritmo.
-        </p>
+          <div class="etiqueta">
+            <span class="punto"></span>
+            Una recomendación de amigas con criterio
+          </div>
 
-        <div class="botones">
-          <a class="boton boton-principal" href="#conocela">
-            Conocer a Maite ↓
-          </a>
+          <h1>
+            Esta es
+            <span class="cursiva">Maite.</span>
+          </h1>
 
-          <a class="boton boton-secundario" href="#compatibilidad">
-            Hacer el test
-          </a>
-        </div>
+          <p class="hero-frase">
+            Hay personas que aparecen por casualidad.
+            Y otras que merecen ser presentadas.
+            Maite tiene 51 años, vive en Mahón y todavía conserva
+            la curiosidad de quien sabe que queda mucho mundo por descubrir.
+          </p>
 
-      </div>
+          <div class="botones">
+            <a class="boton boton-principal" href="#maite">
+              Conocer a Maite ↓
+            </a>
 
-      <div class="contenedor-foto aparecer">
+            <a class="boton boton-secundario" href="#compatibilidad">
+              Hacer el test
+            </a>
+          </div>
 
-        <div class="foto-principal"></div>
-
-        <div class="tarjeta-flotante">
-          <strong>Disponible</strong>
-
-          <span>
-            Para una buena historia.
-            No para perder el tiempo.
-          </span>
         </div>
 
       </div>
@@ -825,75 +800,118 @@
 
   <main>
 
-    <section id="conocela">
+    <section id="maite">
 
       <div class="contenedor">
 
-        <div class="cabecera-seccion aparecer">
+        <div class="cabecera aparecer">
 
           <div>
-            <div class="subtitulo">
-              El perfil que no sale en las apps
+
+            <div class="mini-titulo">
+              El perfil que no sale en las aplicaciones
             </div>
 
             <h2>
               Una mujer que merece una buena casualidad.
             </h2>
+
           </div>
 
           <p class="texto-seccion">
-            Maite es de esas personas con las que un café termina
-            durando tres horas. Tiene sentido del humor, conversación,
-            independencia y una capacidad bastante seria para convertir
-            cualquier plan sencillo en un planazo.
+            Maite no busca que alguien le cambie la vida.
+            Le basta con encontrar a una persona con quien disfrutarla:
+            viajar, reírse, conversar, improvisar un plan y terminar
+            viendo ponerse el sol junto al mar.
           </p>
+
+        </div>
+
+        <div class="presentacion">
+
+          <div class="retrato aparecer">
+            <img
+              src="foto-portada.jpg"
+              alt="Maite disfrutando de un día en el mar"
+            >
+          </div>
+
+          <div class="historia aparecer">
+
+            <div class="edad">
+              51 años.
+            </div>
+
+            <p>
+              La edad suficiente para saber lo que quiere
+              y la curiosidad suficiente para seguir descubriendo el mundo.
+            </p>
+
+            <p>
+              Vive en Mahón, en Menorca. Le encanta viajar,
+              el mar, leer, conocer lugares nuevos y disfrutar de las
+              pequeñas cosas: una buena conversación, una copa en una terraza,
+              una excursión inesperada o un día de barco.
+            </p>
+
+            <p>
+              Es independiente, divertida, auténtica y de esas personas
+              con las que un café puede acabar convirtiéndose
+              en una conversación de tres horas.
+            </p>
+
+          </div>
 
         </div>
 
         <div class="datos">
 
           <article class="dato aparecer">
+
             <div class="icono">📍</div>
 
             <div>
-              <strong>Vive en Madrid</strong>
+              <strong>Mahón</strong>
               <br>
-              <span>Cambia aquí la ciudad</span>
+              <span>Su hogar está en Menorca</span>
             </div>
+
           </article>
 
           <article class="dato aparecer">
-            <div class="icono">✨</div>
+
+            <div class="icono">✈️</div>
 
             <div>
-              <strong>35 años</strong>
+              <strong>Viajera</strong>
               <br>
-              <span>Cambia aquí su edad</span>
+              <span>Siempre tiene un próximo destino en mente</span>
             </div>
+
           </article>
 
           <article class="dato aparecer">
-            <div class="icono">🥂</div>
+
+            <div class="icono">🌊</div>
 
             <div>
-              <strong>Plan perfecto</strong>
+              <strong>Amante del mar</strong>
               <br>
-              <span>
-                Terraza, cena y conversación sin mirar el móvil
-              </span>
+              <span>Barco, playa, natación y puestas de sol</span>
             </div>
+
           </article>
 
           <article class="dato aparecer">
-            <div class="icono">❤️</div>
+
+            <div class="icono">📖</div>
 
             <div>
-              <strong>Busca</strong>
+              <strong>Curiosa</strong>
               <br>
-              <span>
-                Alguien divertido, auténtico y emocionalmente disponible
-              </span>
+              <span>Lee, conversa y siempre quiere descubrir algo nuevo</span>
             </div>
+
           </article>
 
         </div>
@@ -912,32 +930,34 @@
 
           <div class="lista">
 
-            <div class="elemento-lista">
+            <div class="elemento">
               <span class="numero">01</span>
-              <span>
-                Se ríe mucho y hace reír todavía más.
-              </span>
+              <span>Se ríe mucho y hace reír todavía más.</span>
             </div>
 
-            <div class="elemento-lista">
+            <div class="elemento">
               <span class="numero">02</span>
-              <span>
-                Es independiente, cariñosa y sabe lo que quiere.
-              </span>
+              <span>Es independiente, cariñosa y sabe lo que quiere.</span>
             </div>
 
-            <div class="elemento-lista">
+            <div class="elemento">
               <span class="numero">03</span>
-              <span>
-                No juega a desaparecer ni colecciona dramas.
-              </span>
+              <span>Disfruta tanto de una cena bonita como de una mochila y unas zapatillas.</span>
             </div>
 
-            <div class="elemento-lista">
+            <div class="elemento">
               <span class="numero">04</span>
-              <span>
-                Sus amigas la recomendarían incluso con garantía ampliada.
-              </span>
+              <span>Le encanta viajar, leer, el mar y descubrir lugares nuevos.</span>
+            </div>
+
+            <div class="elemento">
+              <span class="numero">05</span>
+              <span>No juega a desaparecer ni colecciona dramas.</span>
+            </div>
+
+            <div class="elemento">
+              <span class="numero">06</span>
+              <span>Sus amigas la recomendarían incluso con garantía ampliada.</span>
             </div>
 
           </div>
@@ -946,37 +966,38 @@
 
         <article class="panel aparecer">
 
-          <h3>Pequeña letra</h3>
+          <h3>Lo que busca</h3>
 
           <div class="lista">
 
-            <div class="elemento-lista">
+            <div class="elemento">
               <span class="numero">01</span>
-              <span>
-                Puede robarte alguna patata del plato.
-              </span>
+              <span>Una persona auténtica y emocionalmente disponible.</span>
             </div>
 
-            <div class="elemento-lista">
+            <div class="elemento">
               <span class="numero">02</span>
-              <span>
-                Probablemente tenga razón más veces de las que admitirás.
-              </span>
+              <span>Alguien con sentido del humor y conversación.</span>
             </div>
 
-            <div class="elemento-lista">
+            <div class="elemento">
               <span class="numero">03</span>
-              <span>
-                No está aquí para entretener a indecisos profesionales.
-              </span>
+              <span>Un compañero de aventuras, no un príncipe perfecto.</span>
             </div>
 
-            <div class="elemento-lista">
+            <div class="elemento">
               <span class="numero">04</span>
-              <span>
-                Esta web ha sido creada sin la intervención de su
-                departamento jurídico.
-              </span>
+              <span>Alguien que proponga planes y no responda siempre “ya veremos”.</span>
+            </div>
+
+            <div class="elemento">
+              <span class="numero">05</span>
+              <span>Una historia bonita, sin juegos y sin perder el tiempo.</span>
+            </div>
+
+            <div class="elemento">
+              <span class="numero">06</span>
+              <span>Y, puestos a discutir, que sea solamente por el próximo destino.</span>
             </div>
 
           </div>
@@ -987,74 +1008,63 @@
 
     </section>
 
-    <section>
+    <section id="galeria">
 
       <div class="contenedor">
 
-        <div class="cabecera-seccion aparecer">
+        <div class="cabecera aparecer">
 
           <div>
-            <div class="subtitulo">
-              Pruebas gráficas
+
+            <div class="mini-titulo">
+              Maite fuera del currículum
             </div>
 
             <h2>
-              Maite, fuera del currículum.
+              Viajes, mar, amigos y muchas ganas de vivir.
             </h2>
+
           </div>
 
           <p class="texto-seccion">
-            Después añadiremos aquí sus fotos reales.
-            Solo tendremos que subirlas con los nombres
-            foto1.jpg, foto2.jpg, foto3.jpg y foto4.jpg.
+            No hace falta decir que le gusta viajar,
+            improvisar o disfrutar del mar. Sus fotos ya lo cuentan.
           </p>
 
         </div>
 
         <div class="galeria">
 
-          <div class="foto-galeria aparecer">
-            <img
-              src="foto1.jpg"
-              alt="Foto de Maite"
-            >
-
-            <div class="nombre-foto">
-              foto1.jpg
-            </div>
+          <div class="foto aparecer">
+            <img src="foto1.jpg" alt="Maite disfrutando de una terraza">
           </div>
 
-          <div class="foto-galeria aparecer">
-            <img
-              src="foto2.jpg"
-              alt="Maite viajando"
-            >
-
-            <div class="nombre-foto">
-              foto2.jpg
-            </div>
+          <div class="foto aparecer">
+            <img src="foto2.jpg" alt="Maite al atardecer en la playa">
           </div>
 
-          <div class="foto-galeria aparecer">
-            <img
-              src="foto3.jpg"
-              alt="Maite disfrutando de un plan"
-            >
-
-            <div class="nombre-foto">
-              foto3.jpg
-            </div>
+          <div class="foto aparecer">
+            <img src="foto3.jpg" alt="Maite visitando una cueva">
           </div>
 
-          <div class="foto-galeria aparecer">
-            <img
-              src="foto4.jpg"
-              alt="Sonrisa de Maite"
-            >
+          <div class="foto aparecer">
+            <img src="foto4.jpg" alt="Maite junto a una cascada">
+          </div>
 
-            <div class="nombre-foto">
-              foto4.jpg
-            </div>
+          <div class="foto aparecer">
+            <img src="foto5.jpg" alt="Maite conversando en un evento">
+          </div>
+
+          <div class="foto aparecer">
+            <img src="foto6.jpg" alt="Maite en una terraza al atardecer">
+          </div>
+
+          <div class="foto aparecer">
+            <img src="foto7.jpg" alt="Maite leyendo en un barco">
+          </div>
+
+          <div class="foto aparecer">
+            <img src="foto8.jpg" alt="Maite nadando en el mar">
           </div>
 
         </div>
@@ -1073,7 +1083,7 @@
 
             <div>
 
-              <div class="subtitulo">
+              <div class="mini-titulo">
                 Test científicamente poco riguroso
               </div>
 
@@ -1082,9 +1092,9 @@
               </h2>
 
               <p class="texto-seccion">
-                El algoritmo ha sido desarrollado por amigas,
-                copas de vino y años de experiencia detectando
-                red flags.
+                Este algoritmo ha sido desarrollado
+                por amigas, copas de vino y años de experiencia
+                detectando red flags.
               </p>
 
             </div>
@@ -1100,11 +1110,11 @@
                 <div class="opciones">
 
                   <button class="opcion" data-puntos="3">
-                    Un sitio bonito y conversación
+                    Un sitio bonito y una buena conversación
                   </button>
 
                   <button class="opcion" data-puntos="2">
-                    Algo espontáneo
+                    Un plan espontáneo
                   </button>
 
                   <button class="opcion" data-puntos="0">
@@ -1132,7 +1142,7 @@
                   </button>
 
                   <button class="opcion" data-puntos="0">
-                    Ahora mismo no respondo a tres personas
+                    Estoy leyendo esto y no respondiendo a tres personas
                   </button>
 
                 </div>
@@ -1152,7 +1162,7 @@
                   </button>
 
                   <button class="opcion" data-puntos="2">
-                    Ver qué surge con honestidad
+                    Ver qué surge, pero con honestidad
                   </button>
 
                   <button class="opcion" data-puntos="0">
@@ -1205,9 +1215,9 @@
 
       <div class="contenedor">
 
-        <div class="tarjeta-final aparecer">
+        <div class="final-caja aparecer">
 
-          <div class="subtitulo">
+          <div class="mini-titulo">
             El algoritmo ya ha hecho bastante
           </div>
 
@@ -1217,23 +1227,24 @@
 
           <p>
             No hace falta escribir una novela.
-            Basta con presentarte, contarle dónde viste el QR
-            y proponerle un café. Con educación, humor y
-            cero mensajes inquietantes.
+            Preséntate, cuéntale dónde has visto el QR
+            y propón un café, una copa o un paseo.
+            Con educación, humor y cero mensajes inquietantes.
           </p>
 
           <div
             class="botones"
-            style="justify-content: center;"
+            style="justify-content:center;"
           >
 
+            <!-- CAMBIA USUARIO_DE_MAITE POR SU USUARIO REAL -->
             <a
               class="boton boton-principal"
-              href="https://instagram.com/USUARIO_DE_MAITE"
+              href="https://instagram.com/maitechumf"
               target="_blank"
               rel="noopener"
             >
-              Escribir a Maite en Instagram
+              Invitar a Maite a un café ☕
             </a>
 
           </div>
@@ -1247,8 +1258,7 @@
   </main>
 
   <footer>
-    Hecho con cariño por unas amigas que creen que
-    Maite merece una historia bonita ❤️
+    Hecho con cariño por unas amigas que creen que Maite merece una historia bonita ❤️
   </footer>
 
   <script>
@@ -1315,7 +1325,7 @@
               document.querySelectorAll("[data-pregunta]")
             );
 
-          const elegidas =
+          const seleccionadas =
             preguntas.map(function (pregunta) {
 
               return pregunta.querySelector(
@@ -1324,12 +1334,12 @@
 
             });
 
-          const faltaAlguna =
-            elegidas.some(function (opcion) {
+          const faltaRespuesta =
+            seleccionadas.some(function (opcion) {
               return !opcion;
             });
 
-          if (faltaAlguna) {
+          if (faltaRespuesta) {
 
             alert(
               "Contesta las tres preguntas. Maite merece un mínimo de esfuerzo."
@@ -1339,7 +1349,7 @@
           }
 
           const puntos =
-            elegidas.reduce(
+            seleccionadas.reduce(
               function (total, opcion) {
 
                 return total +
@@ -1349,55 +1359,54 @@
               0
             );
 
-          const porcentaje =
+          const compatibilidad =
             Math.round(
               (puntos / 9) * 100
             );
 
-          const cajaResultado =
+          const caja =
             document.getElementById("resultado");
 
-          const numeroResultado =
-            document.getElementById("porcentaje");
+          document
+            .getElementById("porcentaje")
+            .textContent =
+              compatibilidad + "%";
 
-          const tituloResultado =
+          const titulo =
             document.getElementById("titulo-resultado");
 
-          const textoResultado =
+          const texto =
             document.getElementById("texto-resultado");
 
-          numeroResultado.textContent =
-            porcentaje + "%";
+          if (compatibilidad >= 80) {
 
-          if (porcentaje >= 80) {
-
-            tituloResultado.textContent =
+            titulo.textContent =
               "Hay potencial serio.";
 
-            textoResultado.textContent =
+            texto.textContent =
               "El comité de amigas aprueba esta candidatura. Te has ganado el derecho a escribirle un mensaje decente.";
 
-          } else if (porcentaje >= 50) {
+          } else if (compatibilidad >= 50) {
 
-            tituloResultado.textContent =
+            titulo.textContent =
               "Podría funcionar.";
 
-            textoResultado.textContent =
-              "No está todo perdido. Un buen mensaje, un poco de humor y una propuesta concreta pueden mejorar mucho el resultado.";
+            texto.textContent =
+              "Un buen mensaje, algo de humor y una propuesta concreta pueden mejorar mucho este resultado.";
 
           } else {
 
-            tituloResultado.textContent =
+            titulo.textContent =
               "Revisión pendiente.";
 
-            textoResultado.textContent =
+            texto.textContent =
               "Quizá Maite no sea el problema. Reflexiona, hidrátate y vuelve cuando estés emocionalmente disponible.";
 
           }
 
-          cajaResultado.style.display = "grid";
+          caja.style.display = "grid";
 
-          cajaResultado.scrollIntoView({
+          caja.scrollIntoView({
             behavior: "smooth",
             block: "center"
           });
